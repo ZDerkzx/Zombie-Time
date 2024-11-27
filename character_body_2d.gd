@@ -4,9 +4,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var direction = ""
+var inventory = [] 
+
 
 func _physics_process(delta):
 	playerMovement(delta)
+
 
 func playerMovement(delta):
 	if Input.is_action_pressed("ui_down"):
@@ -48,6 +51,19 @@ func Anim(anim_direct):
 	else:
 		anim.play("idle")
 		anim.flip_h = false
+		
+		
+func addItemInventory(test,aggitem):
+	inventory.append(aggitem)
+	if test == true:
+		print(inventory)
+		
+
+	
+
+		
+
+
 	
 	
 	
